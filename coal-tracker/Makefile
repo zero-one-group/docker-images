@@ -1,4 +1,4 @@
-DOCKERNAME=zeroonetechnology/coal-tracker
+DOCKERNAME=zeroonetechnology/python-data-cleaning
 VERSION=20210305
 
 build:
