@@ -1,5 +1,5 @@
 DOCKERNAME=zeroonetechnology/python-data-cleaning
-VERSION=20210821
+VERSION=20210807
 
 build:
 	docker build -f Dockerfile -t $(DOCKERNAME):$(VERSION) .

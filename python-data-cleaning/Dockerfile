@@ -8,4 +8,4 @@ RUN conda install -c conda-forge mamba \
 
 RUN pip install --upgrade pip
 ADD requirements.txt /opt/requirements.txt
-RUN pip install -r /opt/requirements.txt --ignore-installed
+RUN pip install -r /opt/requirements.txt
