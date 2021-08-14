@@ -1,5 +1,5 @@
 DOCKERNAME=zeroonetechnology/node-dvc
-VERSION=20210702
+VERSION=20210814
 
 build:
 	docker build -f Dockerfile -t $(DOCKERNAME):$(VERSION) .
