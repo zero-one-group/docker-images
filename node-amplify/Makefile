@@ -1,5 +1,5 @@
 DOCKERNAME=01group/node-amplify
-VERSION=20220113
+VERSION=20220414
 
 build:
 	docker build -f Dockerfile -t $(DOCKERNAME):$(VERSION) .
