@@ -1,5 +1,5 @@
-DOCKERNAME=01group/node-amplify
-VERSION=20220708
+DOCKERNAME=01group/flutter-android
+VERSION=20220718
 
 build:
 	docker build -f Dockerfile -t $(DOCKERNAME):$(VERSION) .

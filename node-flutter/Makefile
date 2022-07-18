@@ -1,5 +1,5 @@
 DOCKERNAME=01group/node-flutter
-VERSION=20220224
+VERSION=20220718
 
 build:
 	docker build -f Dockerfile -t $(DOCKERNAME):$(VERSION) .
