@@ -22,7 +22,7 @@ RUN cd Android/sdk/cmdline-tools/latest/bin && ./sdkmanager "cmdline-tools;lates
 ENV PATH "$PATH:/home/developer/Android/sdk/platform-tools"
 
 # Download Flutter SDK
-RUN git clone https://github.com/flutter/flutter.git
+RUN git clone -b 3.0.5 https://github.com/flutter/flutter.git
 ENV PATH "$PATH:/home/developer/flutter/bin"
 
 # Run basic check to download Dark SDK
