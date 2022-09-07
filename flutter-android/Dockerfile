@@ -14,15 +14,17 @@ ENV ANDROID_SDK_ROOT /home/developer/Android/sdk
 RUN mkdir -p .android && touch .android/repositories.cfg
 
 # Set up Android SDK
-RUN wget -O sdk-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip
-RUN unzip sdk-tools.zip && rm sdk-tools.zip
-RUN mv cmdline-tools Android/sdk/cmdline-tools/latest
-RUN cd Android/sdk/cmdline-tools/latest/bin && yes | ./sdkmanager --licenses
-RUN cd Android/sdk/cmdline-tools/latest/bin && ./sdkmanager "cmdline-tools;latest" "build-tools;29.0.2" "patcher;v4" "platform-tools" "platforms;android-32" "sources;android-32"
+RUN wget -O sdk-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip && \
+ unzip sdk-tools.zip && rm sdk-tools.zip && \
+ mv cmdline-tools Android/sdk/cmdline-tools/latest && \
+ cd Android/sdk/cmdline-tools/latest/bin && \
+ yes | ./sdkmanager --licenses && \
+ ./sdkmanager "cmdline-tools;latest" "build-tools;29.0.2" "patcher;v4" "platform-tools" "platforms;android-32" "sources;android-32"
 ENV PATH "$PATH:/home/developer/Android/sdk/platform-tools"
 
 # Download Flutter SDK
-RUN git clone -b 3.0.5 https://github.com/flutter/flutter.git
+ARG FLUTTER_VERSION
+RUN git clone -b $FLUTTER_VERSION https://github.com/flutter/flutter.git --depth 1
 ENV PATH "$PATH:/home/developer/flutter/bin"
 
 # Run basic check to download Dark SDK
