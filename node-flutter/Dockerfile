@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y curl git unzip xz-utils zip libglu1-mes
 RUN npm install -g pnpm
 
 # Download Flutter SDK
-RUN git clone https://github.com/flutter/flutter.git
+RUN git clone -b 3.7.2 https://github.com/flutter/flutter.git --depth 1
 ENV PATH "$PATH:/flutter/bin"
 
 # Run basic check to download Dart SDK
