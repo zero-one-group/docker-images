@@ -1,11 +1,8 @@
-FROM --platform=linux/amd64 node:20-alpine
+FROM --platform=linux/amd64 node:20-bookworm-slim
 LABEL maintainer="Doni Rubiagatra <doni@zero-one-group.com"
 
-RUN apk add --no-cache git
+RUN apt update && apt install -y python3-full python3-pip git
 RUN npm install -g pnpm
 
-# Install python
-RUN apk add --update --no-cache python3
-RUN ln -sf python3 /usr/bin/python
-RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
