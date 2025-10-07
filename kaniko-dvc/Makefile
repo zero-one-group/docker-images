@@ -1,5 +1,5 @@
 DOCKERNAME=ghcr.io/zero-one-group/kaniko-dvc
-VERSION=1.25.0
+VERSION=1.25.5
 
 build:
 	docker build -f Dockerfile -t $(DOCKERNAME):$(VERSION) .

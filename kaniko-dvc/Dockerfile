@@ -1,4 +1,4 @@
-FROM martizih/kaniko:v1.25.0-debug AS kaniko-src
+FROM martizih/kaniko:v1.25.5-debug AS kaniko-src
 
 FROM alpine:3.20
 
