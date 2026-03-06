@@ -1,9 +1,18 @@
 FROM martizih/kaniko:v1.25.5-debug AS kaniko-src
-FROM debian:bookworm-slim
+
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-      python3 python3-pip python3-venv git bash \
-    && python3 -m venv /opt/venv \
+      python3.12 \
+      python3.12-venv \
+      python3-pip \
+      git \
+      bash \
+      curl \
+      ca-certificates \
+    && python3.12 -m venv /opt/venv \
     && . /opt/venv/bin/activate \
     && pip install --no-cache-dir dvc dvc-gdrive \
     && rm -rf /var/lib/apt/lists/*
